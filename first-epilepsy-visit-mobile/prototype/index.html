@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your First Seizure Doctor Visit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6efdf;
+      --paper-deep: #ead8b9;
+      --ink: #221b18;
+      --muted: #645950;
+      --olive: #71894a;
+      --burgundy: #7d4956;
+      --teal: #567c78;
+      --gold: #d5ac5d;
+      --card: rgba(255, 251, 244, 0.82);
+      --line: rgba(34, 27, 24, 0.12);
+      --shadow: 0 18px 40px rgba(50, 34, 21, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --content: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at top left, rgba(213, 172, 93, 0.24), transparent 32%),
+        radial-gradient(circle at top right, rgba(86, 124, 120, 0.16), transparent 28%),
+        linear-gradient(180deg, #f8f0dd 0%, #f2e6ce 52%, #efe1c6 100%);
+      color: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Atkinson Hyperlegible Next", sans-serif;
+      line-height: 1.45;
+      min-height: 100vh;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.25), transparent 20%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.15;
+      background-image:
+        repeating-linear-gradient(
+          115deg,
+          rgba(60, 40, 25, 0.05) 0,
+          rgba(60, 40, 25, 0.05) 2px,
+          transparent 2px,
+          transparent 7px
+        );
+      mix-blend-mode: multiply;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      background: linear-gradient(180deg, rgba(246, 239, 223, 0.94), rgba(246, 239, 223, 0.66));
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar__inner {
+      width: min(100%, var(--content));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(34, 27, 24, 0.1);
+      box-shadow: 0 8px 20px rgba(50, 34, 21, 0.08);
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow__dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--olive), var(--teal));
+      box-shadow: 0 0 0 6px rgba(86, 124, 120, 0.14);
+    }
+
+    .counter {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    main {
+      width: min(100%, var(--content));
+      margin: 0 auto;
+      padding: 28px 16px 72px;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      gap: 24px;
+      padding: 22px 0 26px;
+    }
+
+    .hero__panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 78svh;
+      box-shadow: var(--shadow);
+      background: #d7c39d;
+      border: 1px solid rgba(34, 27, 24, 0.08);
+    }
+
+    .hero__panel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 58%;
+      filter: saturate(0.9) contrast(1.04);
+      transform: scale(1.01);
+    }
+
+    .hero__panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(22, 17, 14, 0.02), rgba(22, 17, 14, 0.08)),
+        linear-gradient(180deg, rgba(246,239,223,0.18) 0%, rgba(246,239,223,0.04) 28%, rgba(246,239,223,0.82) 100%);
+    }
+
+    .hero__copy {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 14px;
+      height: 100%;
+      padding: clamp(24px, 6vw, 44px);
+      max-width: 560px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 251, 244, 0.84);
+      border: 1px solid rgba(34, 27, 24, 0.1);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 9vw, 5.6rem);
+      max-width: 10ch;
+    }
+
+    .hero__lede {
+      font-size: clamp(1.05rem, 3vw, 1.32rem);
+      color: rgba(34, 27, 24, 0.88);
+      max-width: 42ch;
+    }
+
+    .hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(34, 27, 24, 0.09);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .note {
+      margin: 8px 0 0;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 250, 241, 0.68);
+      border: 1px dashed rgba(34, 27, 24, 0.14);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .story {
+      display: grid;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .card__inner {
+      padding: 18px;
+    }
+
+    .card__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card__index {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card__body {
+      display: grid;
+      gap: 14px;
+    }
+
+    .scene {
+      overflow: hidden;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(234, 216, 185, 0.4), rgba(250, 244, 230, 0.9));
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      aspect-ratio: 4 / 5;
+      position: relative;
+    }
+
+    .scene img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--pos-x, 50%) var(--pos-y, 50%);
+      filter: saturate(0.88) contrast(1.05);
+      transform: scale(1.02);
+    }
+
+    .scene--contain {
+      background:
+        linear-gradient(180deg, rgba(246, 239, 223, 0.96), rgba(239, 225, 198, 0.96));
+    }
+
+    .scene--contain img {
+      object-fit: contain;
+      object-position: center top;
+      transform: none;
+    }
+
+    .card--immersive {
+      overflow: hidden;
+    }
+
+    .card--immersive .card__inner {
+      padding: 0;
+    }
+
+    .immersive {
+      position: relative;
+      border-radius: inherit;
+      overflow: hidden;
+      min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(246, 239, 223, 0.98), rgba(239, 225, 198, 0.98));
+    }
+
+    .immersive img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .immersive__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(34, 27, 24, 0.22) 0%, rgba(34, 27, 24, 0.05) 22%, rgba(34, 27, 24, 0) 42%),
+        linear-gradient(180deg, rgba(34, 27, 24, 0) 58%, rgba(34, 27, 24, 0.12) 100%);
+    }
+
+    .immersive__top,
+    .immersive__bottom {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .immersive__eyebrow {
+      display: inline-flex;
+      align-self: start;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255, 251, 244, 0.88);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .immersive__copy {
+      max-width: 34rem;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 251, 244, 0.84);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      box-shadow: 0 8px 24px rgba(50, 34, 21, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .immersive__copy h2 {
+      font-size: clamp(1.55rem, 5vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+
+    .immersive__copy p {
+      margin: 0;
+      color: rgba(34, 27, 24, 0.92);
+      font-size: 1rem;
+    }
+
+    .scene::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,250,241,0.02), rgba(255,250,241,0.16)),
+        linear-gradient(180deg, rgba(255,250,241,0) 50%, rgba(255,250,241,0.44) 100%);
+      pointer-events: none;
+    }
+
+    .scene__tag {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 1;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 251, 244, 0.88);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .copy {
+      display: grid;
+      gap: 10px;
+    }
+
+    .copy h2 {
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+    }
+
+    .copy p {
+      margin: 0;
+      font-size: 1rem;
+      color: rgba(34, 27, 24, 0.9);
+    }
+
+    .pull {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(113, 137, 74, 0.12), rgba(86, 124, 120, 0.1));
+      border: 1px solid rgba(34, 27, 24, 0.08);
+      font-weight: 600;
+      color: #2e3731;
+    }
+
+    .list-card,
+    .questions {
+      display: grid;
+      gap: 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .pill-list li,
+    .question-list li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(34, 27, 24, 0.09);
+      background: rgba(255, 252, 247, 0.82);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .pill-list li::before {
+      content: "•";
+      margin-right: 10px;
+      color: var(--olive);
+      font-weight: 900;
+    }
+
+    .question-list li::before {
+      content: "?";
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: rgba(125, 73, 86, 0.12);
+      color: var(--burgundy);
+      font-weight: 800;
+    }
+
+    .micro-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .micro-grid__item {
+      padding: 14px 15px;
+      border-radius: 18px;
+      background: rgba(255, 252, 247, 0.86);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+    }
+
+    .micro-grid__item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      text-align: center;
+      padding: 26px 18px 30px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(213, 172, 93, 0.22), transparent 30%),
+        radial-gradient(circle at 85% 12%, rgba(86, 124, 120, 0.16), transparent 24%),
+        rgba(255, 251, 244, 0.84);
+    }
+
+    .footer-card h2 {
+      font-size: clamp(2rem, 6vw, 3.1rem);
+      margin-bottom: 10px;
+    }
+
+    .footer-card p {
+      max-width: 44ch;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .footer-card .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 760px) {
+      .story .card--split .card__body {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        align-items: center;
+      }
+
+      .story .card--copy-first .card__body {
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      }
+
+      .story .card--sequence .card__body {
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+        align-items: start;
+      }
+
+      .story .card--sequence .micro-grid {
+        grid-column: 1 / -1;
+      }
+
+      .micro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 759px) {
+      h1 {
+        max-width: 8ch;
+      }
+
+      .topbar__inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .counter {
+        text-align: right;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Mobile-first epilepsy visit comic
+      </div>
+      <div class="counter"><span id="counter">01</span> / 12 screens</div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" data-screen="1">
+      <div class="hero__panel">
+        <img src="../assets/generated/01-hero-cover.png" alt="Hero illustration for the mobile epilepsy first-visit comic">
+        <div class="hero__copy">
+          <div class="kicker">OpenAI Image 2.0 production scene</div>
+          <h1>Your First Seizure Doctor Visit</h1>
+          <p class="hero__lede">A calmer, mobile-first version of the comic for waiting-room and NFC use. The final build keeps the words in real text and lets Image 2.0 handle the scene art.</p>
+          <div class="hero__meta">
+            <span class="chip">vertical story cards</span>
+            <span class="chip">3 minute skim</span>
+            <span class="chip">real text outside images</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">This page now uses generated production scenes for the main emotional beats while keeping the words in editable HTML/CSS. The remaining refinement work is crop tuning, copy tightening, and real-device testing.</p>
+    </section>
+
+    <section class="story">
+      <article class="card card--split" data-screen="2">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">02 / Arrival</span>
+          </div>
+          <div class="card__body">
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/02-check-in.png" alt="Check-in scene in the epilepsy visit comic">
+              <span class="scene__tag">Image 2.0 scene: check-in</span>
+            </div>
+            <div class="copy">
+              <h2>First: checking in</h2>
+              <p>When you arrive, clinic staff help you get checked in and point you in the right direction. You may be asked to confirm your appointment and review forms or history information.</p>
+              <div class="pull">Keep your medicines, records, and questions easy to reach.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="3">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">03 / While You Wait</span>
+          </div>
+          <div class="card__body list-card">
+            <div class="copy">
+              <h2>While you wait</h2>
+              <p>This is a good moment to gather the details you want to share.</p>
+            </div>
+            <ul class="pill-list">
+              <li>what happened before, during, and after the event</li>
+              <li>medicines you take now</li>
+              <li>questions you want answered</li>
+              <li>a family member or friend who saw what happened</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--split card--copy-first" data-screen="4">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">04 / Meet The Doctor</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>Meet your seizure doctor</h2>
+              <p>An epileptologist is a neurologist who specializes in seizures. The visit is a conversation, not a test you can fail.</p>
+              <div class="pull">"I'm here to listen and work with you."</div>
+            </div>
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/04-meeting-doctor.png" alt="Meeting the doctor scene in the epilepsy visit comic">
+              <span class="scene__tag">Image 2.0 scene: consultation room</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--split" data-screen="5">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">05 / Your Story</span>
+          </div>
+          <div class="card__body">
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/05-tell-your-story.png" alt="Telling your story scene in the epilepsy visit comic">
+              <span class="scene__tag">Image 2.0 scene: telling your story</span>
+            </div>
+            <div class="copy">
+              <h2>Your story matters</h2>
+              <p>Your doctor will ask what you felt, what other people saw, how long it lasted, and how you felt afterward. Even small details can help.</p>
+              <div class="pull">If a family member or friend witnessed the event, their description can be useful too.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--immersive" data-screen="6">
+        <div class="card__inner">
+          <div class="immersive">
+            <img src="../assets/generated/06-before-during-after.png" alt="Before, during, and after seizure sequence in the epilepsy visit comic">
+            <div class="immersive__overlay">
+              <div class="immersive__top">
+                <span class="immersive__eyebrow">06 / Before, During, After</span>
+              </div>
+              <div class="immersive__bottom">
+                <div class="immersive__copy">
+                  <h2>Before, during, after</h2>
+                  <p>The sequence matters. If there was a warning feeling before the event, what happened during it, and how you felt afterward can all help your doctor understand the episode.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="7">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">07 / Which Details Matter</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>Which details matter</h2>
+              <p>You do not need perfect memory. Just share the parts you remember and ask family or friends to help fill in what they saw.</p>
+            </div>
+            <div class="micro-grid">
+              <div class="micro-grid__item">
+                <strong>Before</strong>
+                Warning feelings can include a strange smell or taste, a rising feeling, deja vu, fear, or just a sudden sense that something is wrong.
+              </div>
+              <div class="micro-grid__item">
+                <strong>During</strong>
+                Tell your doctor what you did and what others saw, such as staring, shaking, stiffening, falling, or not responding.
+              </div>
+              <div class="micro-grid__item">
+                <strong>After</strong>
+                Recovery details matter too: confusion, exhaustion, soreness, headache, or trouble speaking can all be useful clues.
+              </div>
+              <div class="micro-grid__item">
+                <strong>Important</strong>
+                Not everyone has all three. Share the parts that happened to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="8">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">08 / What May Happen Today</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>What may happen today</h2>
+              <p>The first visit often includes a careful history, a neurologic exam, and a discussion about next steps. Your doctor may talk about tests such as an EEG, MRI, or blood work.</p>
+            </div>
+            <div class="micro-grid">
+              <div class="micro-grid__item">
+                <strong>History</strong>
+                What happened before, during, and after the event.
+              </div>
+              <div class="micro-grid__item">
+                <strong>Exam</strong>
+                A neurologic exam may be part of the visit.
+              </div>
+              <div class="micro-grid__item">
+                <strong>Tests</strong>
+                EEG, MRI, or blood work may be discussed.
+              </div>
+              <div class="micro-grid__item">
+                <strong>Timing</strong>
+                Not every test happens the same day.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--split card--copy-first" data-screen="9">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">09 / Understanding</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>One seizure does not automatically mean epilepsy</h2>
+              <p>Part of this visit is understanding what happened and what needs to be checked next. The goal is clarity, not rushing to conclusions.</p>
+            </div>
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/07-making-sense.png" alt="Making sense of the visit scene in the epilepsy visit comic">
+              <span class="scene__tag">Image 2.0 scene: explanation</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="10">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">10 / Questions</span>
+          </div>
+          <div class="card__body questions">
+            <div class="copy">
+              <h2>Bring your questions</h2>
+              <p>Questions help you leave with a clearer plan.</p>
+            </div>
+            <ul class="question-list">
+              <li>Can I drive?</li>
+              <li>What should I do if this happens again?</li>
+              <li>Do I need testing right away?</li>
+              <li>When should I call the clinic?</li>
+              <li>What should my family watch for?</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--split" data-screen="11">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">11 / Before You Leave</span>
+          </div>
+          <div class="card__body">
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/09-leaving-with-plan.png" alt="Leaving with a plan scene in the epilepsy visit comic">
+              <span class="scene__tag">Image 2.0 scene: leaving with a plan</span>
+            </div>
+            <div class="copy">
+              <h2>Leave with a plan</h2>
+              <p>Before you go, you should understand the next step: testing, medicines if needed, safety guidance, and follow-up.</p>
+              <div class="pull">"You came in with questions. You should leave knowing what happens next."</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card footer-card" data-screen="12">
+        <h2>You do not have to figure this out alone</h2>
+        <p>Bring questions. Bring support. Ask for clarity. This visit is the start of a plan, not the end of the story.</p>
+        <div class="chip-row">
+          <span class="chip">swap in Image 2.0 scenes</span>
+          <span class="chip">test on phone</span>
+          <span class="chip">ready for NFC URL</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const sections = [...document.querySelectorAll("[data-screen]")];
+    const counter = document.getElementById("counter");
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      const value = String(visible.target.dataset.screen).padStart(2, "0");
+      counter.textContent = value;
+    }, {
+      threshold: [0.3, 0.55, 0.8]
+    });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
