@@ -18,7 +18,7 @@ Patient-friendly waiting-room education materials designed for mobile review and
 
 Open:
 
-- [first-epilepsy-visit-mobile/prototype/index.html](./first-epilepsy-visit-mobile/prototype/index.html)
+- [first-epilepsy-visit-mobile/](./first-epilepsy-visit-mobile/)
 
 For GitHub file review, start with:
 

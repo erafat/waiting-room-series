@@ -28,6 +28,16 @@ The new version is a mobile reading system:
 4. Treat each screen as a card in a vertical story, not as a shrunken comic page.
 5. Prefer 4:5 portrait scene art inside a scrolling page instead of full-page multi-panel comics.
 
+## Character Consistency
+
+Use [prompts/character-consistency-method.md](./prompts/character-consistency-method.md) as the repeatable workflow for recurring-character generation.
+
+Short version:
+- lock one active character-sheet anchor before scene work
+- use real photos only to preserve broad likeness, not portrait detail
+- keep the recurring character at the same detail level as the rest of the cast
+- regenerate one scene at a time and version outputs before replacing anything
+
 ## What Carries Forward
 
 - Marcus + family + Dr. Rehim as the core cast
@@ -61,7 +71,9 @@ The new version is a mobile reading system:
 - [prompts/03-meeting-doctor-scene.md](./prompts/03-meeting-doctor-scene.md): consultation prompt
 - [prompts/05-tell-your-story-scene.md](./prompts/05-tell-your-story-scene.md): history / listening prompt
 - [prompts/06-before-during-after-scene.md](./prompts/06-before-during-after-scene.md): seizure-sequence prompt
+- [prompts/06-full-story-scene.md](./prompts/06-full-story-scene.md): optional full-story explainer prompt based on the original print page
 - [prompts/07-making-sense-scene.md](./prompts/07-making-sense-scene.md): explanation prompt
+- [prompts/character-consistency-method.md](./prompts/character-consistency-method.md): repeatable image-consistency workflow
 - [prompts/04-next-steps-scene.md](./prompts/04-next-steps-scene.md): departure / plan prompt
 - [prototype/index.html](./prototype/index.html): mobile demo using real text and temporary placeholder art
 - [assets/generated/README.md](./assets/generated/README.md): destination for final Image 2.0 assets

@@ -1,7 +1,7 @@
 ---
 title: "Your First Seizure Doctor Visit"
 format: mobile_web_comic
-screen_count: 12
+screen_count: 14
 art_ratio: "4:5 portrait scene cards"
 lead_reference: "images-2-indie-comic"
 created: 2026-04-23
@@ -30,12 +30,14 @@ The story structure is:
 | 04 | scene card | yes | The doctor is approachable and on your side. |
 | 05 | scene + text | yes | Your story matters; details help. |
 | 06 | sequence scene + text | yes | Before, during, and after the event are important history details. |
-| 07 | detail card | no | The practical history details can be listed clearly without crowding the sequence art. |
-| 08 | explainer card | light / optional | The first visit often includes questions, exam, and test planning. |
-| 09 | explainer card | light / optional | One seizure does not automatically mean epilepsy. |
-| 10 | questions card | no | Questions are welcome and useful. |
-| 11 | scene card | yes | You leave with a plan, not just fear. |
-| 12 | closing card | light / optional | You do not have to figure this out alone. |
+| 07 | detail card | no | The practical history details come first so patients know what parts of the seizure story matter. |
+| 08 | scene + text | yes | The doctor builds the full story using the event, the backstory, and daily life context. |
+| 09 | detail card | no | Short visual buckets highlight the backstory, daily life, and private topics beyond the seizure itself. |
+| 10 | explainer card | light / optional | The first visit often includes questions, exam, and test planning. |
+| 11 | explainer card | light / optional | One seizure does not automatically mean epilepsy. |
+| 12 | questions card | no | Questions are welcome and useful. |
+| 13 | scene card | yes | You leave with a plan, not just fear. |
+| 14 | closing card | light / optional | You do not have to figure this out alone. |
 
 ## Screen-by-Screen Notes
 
@@ -69,7 +71,7 @@ The story structure is:
 - Copy load: medium
 - Art role: humanize the diagnostic process
 
-### 06. What May Happen Today
+### 06. Before, During, After
 - Visual: a three-step sequence showing before / during / after the event
 - Reading goal: make the seizure timeline concrete and memorable
 - Copy load: low
@@ -81,31 +83,43 @@ The story structure is:
 - Copy load: medium
 - Art role: none required
 
-### 08. What May Happen Today
+### 08. Full Story
+- Visual: Dr. Rehim helping Marcus and his parents build the event story, backstory, and daily-life context
+- Reading goal: show how the doctor turns separate details into one clearer clinical picture
+- Copy load: low to medium
+- Art role: bridge the seizure-detail card and the new full-story breakdown card
+
+### 09. Full Story Details
+- Visual: short visual buckets for backstory, daily life, and private topics
+- Reading goal: name the broader categories the doctor uses beyond the seizure sequence itself
+- Copy load: low to medium
+- Art role: none required
+
+### 10. What May Happen Today
 - Visual: modular explainer card; optional small supporting art tile
 - Reading goal: explain exam + EEG/MRI/blood-work discussion without overwhelming the reader
 - Copy load: medium
 - Art role: supportive, not dominant
 
-### 09. Making Sense Of It
+### 11. Making Sense Of It
 - Visual: simple explanatory card
 - Reading goal: separate "a seizure happened" from "you definitely have epilepsy"
 - Copy load: medium
 - Art role: optional
 
-### 10. Questions Are Part Of The Visit
+### 12. Questions Are Part Of The Visit
 - Visual: high-contrast questions card with chips / prompts
 - Reading goal: empower the patient
 - Copy load: medium
 - Art role: none required
 
-### 11. Leaving With A Plan
+### 13. Leaving With A Plan
 - Visual: doctor handing over next steps, then family leaving calmer
 - Reading goal: close the emotional loop
 - Copy load: low
 - Art role: show resolution
 
-### 12. Closing
+### 14. Closing
 - Visual: simple brand / clinic close
 - Reading goal: make the final impression feel reassuring and shareable
 - Copy load: low
@@ -113,7 +127,7 @@ The story structure is:
 
 ## Production Implications
 
-- Only 4-5 scenes need bespoke Image 2.0 generation for the pilot.
+- Only 5-6 scenes need bespoke Image 2.0 generation for the pilot.
 - The rest of the experience can be strong with layout, typography, and small graphic supports.
 - This reduces generation cost and keeps medical copy editable.
 
@@ -124,6 +138,7 @@ Generate these first:
 2. check-in
 3. meeting doctor
 4. before / during / after sequence
-5. leaving with a plan
+5. full story
+6. leaving with a plan
 
-If those five scenes work, the rest of the mobile experience can be finished confidently.
+If those six scenes work, the rest of the mobile experience can be finished confidently.

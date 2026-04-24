@@ -169,6 +169,20 @@
       max-width: 560px;
     }
 
+    .hero__signature {
+      position: absolute;
+      right: clamp(6px, 2vw, 14px);
+      bottom: clamp(24px, 6vw, 44px);
+      z-index: 1;
+      max-width: min(42vw, 280px);
+      padding: 0;
+      font-size: 0.46rem;
+      line-height: 1.4;
+      color: var(--ink);
+      text-align: right;
+      text-shadow: none;
+    }
+
     .kicker {
       display: inline-flex;
       align-self: flex-start;
@@ -491,6 +505,27 @@
       color: var(--muted);
     }
 
+    .story-points li {
+      padding: 14px 15px;
+      border-radius: 18px;
+      border: 1px solid rgba(34, 27, 24, 0.09);
+      background: rgba(255, 252, 247, 0.82);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .story-points li::before {
+      content: "•";
+      margin-right: 10px;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .story-points li strong {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
     .footer-card {
       text-align: center;
       padding: 26px 18px 30px;
@@ -505,7 +540,7 @@
       margin-bottom: 10px;
     }
 
-    .footer-card p {
+    .footer-card__body {
       max-width: 44ch;
       margin: 0 auto;
       color: var(--muted);
@@ -565,9 +600,9 @@
     <div class="topbar__inner">
       <div class="eyebrow">
         <span class="eyebrow__dot"></span>
-        Mobile-first epilepsy visit comic
+        Epilepsy first-visit guide
       </div>
-      <div class="counter"><span id="counter">01</span> / 12 screens</div>
+        <div class="counter"><span id="counter">01</span> / 14 screens</div>
     </div>
   </div>
 
@@ -576,17 +611,12 @@
       <div class="hero__panel">
         <img src="../assets/generated/01-hero-cover.png" alt="Hero illustration for the mobile epilepsy first-visit comic">
         <div class="hero__copy">
-          <div class="kicker">OpenAI Image 2.0 production scene</div>
+          <div class="kicker">Patient guide</div>
           <h1>Your First Seizure Doctor Visit</h1>
-          <p class="hero__lede">A calmer, mobile-first version of the comic for waiting-room and NFC use. The final build keeps the words in real text and lets Image 2.0 handle the scene art.</p>
-          <div class="hero__meta">
-            <span class="chip">vertical story cards</span>
-            <span class="chip">3 minute skim</span>
-            <span class="chip">real text outside images</span>
-          </div>
         </div>
+        <p class="hero__signature">By Bona Kim, MA, CMI &amp; Erafat D. Rehim, MD<br>Emory Epilepsy Center</p>
       </div>
-      <p class="note">This page now uses generated production scenes for the main emotional beats while keeping the words in editable HTML/CSS. The remaining refinement work is crop tuning, copy tightening, and real-device testing.</p>
+      <p class="note">Scroll at your own pace and come back to any section you want to review.</p>
     </section>
 
     <section class="story">
@@ -598,7 +628,6 @@
           <div class="card__body">
             <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
               <img src="../assets/generated/02-check-in.png" alt="Check-in scene in the epilepsy visit comic">
-              <span class="scene__tag">Image 2.0 scene: check-in</span>
             </div>
             <div class="copy">
               <h2>First: checking in</h2>
@@ -642,7 +671,6 @@
             </div>
             <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
               <img src="../assets/generated/04-meeting-doctor.png" alt="Meeting the doctor scene in the epilepsy visit comic">
-              <span class="scene__tag">Image 2.0 scene: consultation room</span>
             </div>
           </div>
         </div>
@@ -656,7 +684,6 @@
           <div class="card__body">
             <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
               <img src="../assets/generated/05-tell-your-story.png" alt="Telling your story scene in the epilepsy visit comic">
-              <span class="scene__tag">Image 2.0 scene: telling your story</span>
             </div>
             <div class="copy">
               <h2>Your story matters</h2>
@@ -721,7 +748,44 @@
       <article class="card" data-screen="8">
         <div class="card__inner">
           <div class="card__header">
-            <span class="card__index">08 / What May Happen Today</span>
+            <span class="card__index">08 / Full Story</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>The full story helps</h2>
+              <p>Your doctor is piecing together more than one moment. The event itself, the history around it, and your daily life and support system can all help explain what happened.</p>
+              <div class="pull">A more complete story can make the next steps clearer.</div>
+            </div>
+            <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
+              <img src="../assets/generated/07-full-story.png" alt="Full story consultation scene in the epilepsy visit comic">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="9">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">09 / Full Story</span>
+          </div>
+          <div class="card__body">
+            <div class="copy">
+              <h2>What fills in the full story</h2>
+              <p>Your doctor may also ask about your history, daily life, and other details that affect safety and care.</p>
+            </div>
+            <ul class="story-points">
+              <li><strong>Backstory:</strong> Family history, early events, past head injury, prior tests, and medicines tried before.</li>
+              <li><strong>Daily life:</strong> Driving, work or school, sleep, stress, support at home, and alcohol or other substances.</li>
+              <li><strong>Private topics:</strong> Some questions are asked one-on-one when they affect safe care, including pregnancy planning when relevant.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-screen="10">
+        <div class="card__inner">
+          <div class="card__header">
+            <span class="card__index">10 / What May Happen Today</span>
           </div>
           <div class="card__body">
             <div class="copy">
@@ -731,7 +795,7 @@
             <div class="micro-grid">
               <div class="micro-grid__item">
                 <strong>History</strong>
-                What happened before, during, and after the event.
+                A detailed narrative history of your seizure, including what you felt, what others observed, how long it lasted, and how you recovered.
               </div>
               <div class="micro-grid__item">
                 <strong>Exam</strong>
@@ -750,28 +814,27 @@
         </div>
       </article>
 
-      <article class="card card--split card--copy-first" data-screen="9">
+      <article class="card card--split card--copy-first" data-screen="11">
         <div class="card__inner">
           <div class="card__header">
-            <span class="card__index">09 / Understanding</span>
+            <span class="card__index">11 / Making Sense</span>
           </div>
           <div class="card__body">
             <div class="copy">
               <h2>One seizure does not automatically mean epilepsy</h2>
-              <p>Part of this visit is understanding what happened and what needs to be checked next. The goal is clarity, not rushing to conclusions.</p>
+              <p>A seizure is a sudden burst of electrical activity in the brain. Having one seizure does not automatically mean epilepsy. This visit is about understanding what happened and what still needs to be checked next.</p>
             </div>
             <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
-              <img src="../assets/generated/07-making-sense.png" alt="Making sense of the visit scene in the epilepsy visit comic">
-              <span class="scene__tag">Image 2.0 scene: explanation</span>
+              <img src="../assets/generated/08-making-sense.png" alt="Making sense of the visit scene in the epilepsy visit comic">
             </div>
           </div>
         </div>
       </article>
 
-      <article class="card" data-screen="10">
+      <article class="card" data-screen="12">
         <div class="card__inner">
           <div class="card__header">
-            <span class="card__index">10 / Questions</span>
+            <span class="card__index">12 / Questions</span>
           </div>
           <div class="card__body questions">
             <div class="copy">
@@ -789,15 +852,14 @@
         </div>
       </article>
 
-      <article class="card card--split" data-screen="11">
+      <article class="card card--split" data-screen="13">
         <div class="card__inner">
           <div class="card__header">
-            <span class="card__index">11 / Before You Leave</span>
+            <span class="card__index">13 / Before You Leave</span>
           </div>
           <div class="card__body">
             <div class="scene" style="--pos-x: 50%; --pos-y: 50%;">
               <img src="../assets/generated/09-leaving-with-plan.png" alt="Leaving with a plan scene in the epilepsy visit comic">
-              <span class="scene__tag">Image 2.0 scene: leaving with a plan</span>
             </div>
             <div class="copy">
               <h2>Leave with a plan</h2>
@@ -808,14 +870,9 @@
         </div>
       </article>
 
-      <article class="card footer-card" data-screen="12">
+      <article class="card footer-card" data-screen="14">
         <h2>You do not have to figure this out alone</h2>
-        <p>Bring questions. Bring support. Ask for clarity. This visit is the start of a plan, not the end of the story.</p>
-        <div class="chip-row">
-          <span class="chip">swap in Image 2.0 scenes</span>
-          <span class="chip">test on phone</span>
-          <span class="chip">ready for NFC URL</span>
-        </div>
+        <p class="footer-card__body">Bring story. Bring questions. Bring support. Ask for clarity. This visit is the start of a plan, not the end of the story.</p>
       </article>
     </section>
   </main>

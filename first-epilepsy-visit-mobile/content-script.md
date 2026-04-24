@@ -20,6 +20,10 @@ What to expect, step by step.
 **Body**
 Feeling nervous is normal. This guide walks you through the visit in plain language so the appointment feels less unfamiliar.
 
+**Signature**
+By Bona Kim, MA, CMI & Erafat D. Rehim, MD  
+Emory Epilepsy Center
+
 ## 02. Check-In
 
 **Headline**
@@ -91,7 +95,33 @@ You do not need perfect memory. Just share the parts you remember and ask family
 **Note**
 Not everyone has all three. Share the parts that happened to you.
 
-## 08. What May Happen Today
+## 08. The Full Story
+
+**Headline**
+The full story helps
+
+**Body**
+Your doctor is piecing together more than one moment. The event itself, the history around it, and your daily life and support system can all help explain what happened.
+
+**Support Line**
+A more complete story can make the next steps clearer.
+
+## 09. Full Story Details
+
+**Headline**
+What fills in the full story
+
+**Body**
+Your doctor may also ask about your history, daily life, and other details that affect safety and care.
+
+**Full Story Buckets**
+- Backstory: family history, early events, past head injury, prior tests, and medicines tried before
+- Daily life: driving, work or school, sleep, stress, support at home, and alcohol or other substances
+
+**Private Topics**
+Some questions are asked one-on-one when they affect safe care, including pregnancy planning when relevant.
+
+## 10. What May Happen Today
 
 **Headline**
 What may happen today
@@ -99,18 +129,21 @@ What may happen today
 **Body**
 The first visit often includes a careful history, a neurologic exam, and a discussion about next steps. Your doctor may talk about tests such as an EEG, MRI, or blood work.
 
+**History Detail**
+A detailed narrative history of your seizure, including what you felt, what others observed, how long it lasted, and how you recovered.
+
 **Note**
 Not every test happens the same day.
 
-## 09. Making Sense Of It
+## 11. Making Sense Of It
 
 **Headline**
 One seizure does not automatically mean epilepsy
 
 **Body**
-Part of this visit is understanding what happened and what needs to be checked next. The goal is clarity, not rushing to conclusions.
+A seizure is a sudden burst of electrical activity in the brain. Having one seizure does not automatically mean epilepsy. This visit is about understanding what happened and what still needs to be checked next.
 
-## 10. Questions Are Welcome
+## 12. Questions Are Welcome
 
 **Headline**
 Bring your questions
@@ -125,7 +158,7 @@ Questions help you leave with a clearer plan.
 - When should I call the clinic?
 - What should my family watch for?
 
-## 11. Before You Leave
+## 13. Before You Leave
 
 **Headline**
 Leave with a plan
@@ -136,10 +169,10 @@ Before you go, you should understand the next step: testing, medicines if needed
 **Quote**
 "You came in with questions. You should leave knowing what happens next."
 
-## 12. Closing
+## 14. Closing
 
 **Headline**
 You do not have to figure this out alone
 
 **Body**
-Bring questions. Bring support. Ask for clarity. This visit is the start of a plan, not the end of the story.
+Bring story. Bring questions. Bring support. Ask for clarity. This visit is the start of a plan, not the end of the story.

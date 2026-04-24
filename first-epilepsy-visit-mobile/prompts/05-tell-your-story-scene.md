@@ -8,7 +8,8 @@ Composition/framing: portrait 4:5, intimate medium scene, Marcus should feel cen
 Lighting/mood: attentive, emotionally safe, reflective rather than dramatic
 Color palette: warm cream, muted olive, burgundy, gray, soft wood tones
 Materials/textures: off-white paper, matte ink, watercolor bloom, gentle grain
-Constraints: no speech balloons, no readable notes or paperwork, no melodrama, no medical fear imagery
+Physician lock: Dr. Rehim should match the updated simplified physician reference in `physician-reference.md` and the active v2 character sheet: light olive skin, dark side-swept hair with soft volume, clear translucent rectangular-round glasses, strong brows, softly defined jaw, smooth simplified face, clean-shaven or only faintest stubble, brown or gray blazer over a dark shirt. He must not look more detailed, sharper, or more polished than Marcus or the parents; match their same simplified line weight, watercolor softness, and facial-detail level.
+Constraints: no speech balloons, no readable notes or paperwork, no melodrama, no medical fear imagery, no white coat, no thick glasses
 Avoid: photorealism, glossy CGI, cluttered room, hyper-detailed background, action-comic energy
 
 Art-directed editorial comic illustration with tactile analog texture, warm human-centered storytelling, restrained palette, soft paper grain, generous negative space, emotionally legible body language, and composition designed for a mobile vertical reading experience.
