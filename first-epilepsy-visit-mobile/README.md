@@ -70,6 +70,7 @@ Default tracking path:
 - count page opens as pageviews
 - read approximate unique people from GoatCounter visitors/sessions
 - separate QR versus NFC traffic with tagged links, not separate builds
+- also emit GoatCounter events `entry-qr` and `entry-nfc` on page load so channel tests stay visible even when GoatCounter collapses repeat visits in one session
 
 Setup:
 1. Create a GoatCounter site for the public domain.
@@ -77,7 +78,7 @@ Setup:
 3. Use tagged launch URLs for clinic materials:
    - QR: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=qr`
    - NFC: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=nfc`
-4. In GoatCounter, use pageviews for total opens and the campaigns/source view to compare QR vs NFC.
+4. In GoatCounter, use pageviews for total opens, the campaigns/source view for visit attribution, and the Events view for `entry-qr` vs `entry-nfc` load counts.
 
 ## Folder Map
 

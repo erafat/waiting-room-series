@@ -1096,6 +1096,41 @@
       document.head.appendChild(script);
     }
 
+    function whenGoatCounterReady(callback) {
+      if (window.goatcounter && typeof window.goatcounter.count === "function") {
+        callback();
+        return;
+      }
+
+      let attempts = 0;
+      const poller = window.setInterval(() => {
+        attempts += 1;
+
+        if (window.goatcounter && typeof window.goatcounter.count === "function") {
+          window.clearInterval(poller);
+          callback();
+          return;
+        }
+
+        if (attempts >= 20) {
+          window.clearInterval(poller);
+        }
+      }, 250);
+    }
+
+    function trackDeliverySourceEvent(source) {
+      if (!source) return;
+      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
+
+      whenGoatCounterReady(() => {
+        window.goatcounter.count({
+          path: `entry-${source}`,
+          title: `Entry via ${source.toUpperCase()}`,
+          event: true
+        });
+      });
+    }
+
     const deliverySource = normalizeDeliverySource(
       searchParams.get("utm_source") ||
       searchParams.get("source") ||
@@ -1124,6 +1159,7 @@
     }
 
     loadGoatCounter();
+    trackDeliverySourceEvent(deliverySource);
 
     const sections = [...document.querySelectorAll("[data-screen]")];
     const counter = document.getElementById("counter");
