@@ -506,6 +506,142 @@
       color: var(--muted);
     }
 
+    .micro-grid__item--interactive {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .micro-grid__toggle {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 15px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .micro-grid__toggle:focus-visible {
+      outline: 3px solid rgba(86, 124, 120, 0.34);
+      outline-offset: -3px;
+    }
+
+    .micro-grid__toggle-copy {
+      display: block;
+    }
+
+    .micro-grid__toggle-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(86, 124, 120, 0.12);
+      color: var(--teal);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .tests-panel.is-open {
+      grid-column: 1 / -1;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(246, 239, 223, 0.94));
+      box-shadow: 0 10px 24px rgba(50, 34, 21, 0.08);
+    }
+
+    .tests-panel.is-open .micro-grid__toggle-icon {
+      background: rgba(125, 73, 86, 0.12);
+      color: var(--burgundy);
+    }
+
+    .test-explainer {
+      display: grid;
+      gap: 12px;
+      padding: 0 15px 16px;
+      border-top: 1px solid rgba(34, 27, 24, 0.08);
+    }
+
+    .test-explainer[hidden] {
+      display: none;
+    }
+
+    .test-explainer__intro {
+      margin: 0;
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .test-explainer__grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .test-card {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 251, 244, 0.88);
+      border: 1px solid rgba(34, 27, 24, 0.08);
+    }
+
+    .test-card__visual {
+      display: grid;
+      place-items: start stretch;
+    }
+
+    .test-card__art {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(50, 34, 21, 0.08);
+    }
+
+    .test-card__art-stack {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+    }
+
+    .test-card__art-stack--mri {
+      width: 100%;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      align-items: start;
+    }
+
+    .test-card__art-stack--mri .test-card__art {
+      width: 100%;
+    }
+
+    .test-card__art img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .test-card__copy {
+      display: grid;
+      gap: 8px;
+    }
+
+    .test-card__copy h3 {
+      font-size: 1.18rem;
+      line-height: 1.02;
+    }
+
+    .test-card__copy p {
+      margin: 0;
+      color: rgba(34, 27, 24, 0.88);
+    }
+
     .story-points li {
       padding: 14px 15px;
       border-radius: 18px;
@@ -576,6 +712,10 @@
       }
 
       .micro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .test-explainer__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -811,9 +951,46 @@
                 <strong>Exam</strong>
                 A neurologic exam may be part of the visit.
               </div>
-              <div class="micro-grid__item">
-                <strong>Tests</strong>
-                EEG, MRI, or blood work may be discussed.
+              <div class="micro-grid__item micro-grid__item--interactive tests-panel" data-tests-panel>
+                <button class="micro-grid__toggle" type="button" aria-expanded="false" aria-controls="tests-explainer" data-tests-toggle>
+                  <span class="micro-grid__toggle-copy">
+                    <strong>Tests</strong>
+                    Tap to see what an EEG or brain MRI can help show.
+                  </span>
+                  <span class="micro-grid__toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="test-explainer" id="tests-explainer" hidden>
+                  <p class="test-explainer__intro">Your doctor may recommend one, both, or neither right away. These tests answer different questions.</p>
+                  <div class="test-explainer__grid">
+                    <section class="test-card" aria-label="EEG explanation">
+                      <div class="test-card__visual" aria-hidden="true">
+                        <div class="test-card__art">
+                          <img src="../assets/generated/EEG.png" alt="Marcus wearing an EEG cap while a middle-aged Black female EEG tech with glasses helps him in a calm clinic room">
+                        </div>
+                      </div>
+                      <div class="test-card__copy">
+                        <h3>EEG</h3>
+                        <p>An EEG uses small sensors on the scalp to record the brain's electrical activity. It can help your doctor look for seizure-like patterns.</p>
+                      </div>
+                    </section>
+                    <section class="test-card" aria-label="Brain MRI explanation">
+                      <div class="test-card__visual" aria-hidden="true">
+                        <div class="test-card__art-stack test-card__art-stack--mri">
+                          <div class="test-card__art">
+                            <img src="../assets/generated/MRI.png" alt="Marcus lying on an MRI table in side view with his head entering the MRI tube">
+                          </div>
+                          <div class="test-card__art">
+                            <img src="../assets/generated/10-tests-mri-stack.png" alt="Five stacked brain MRI images showing different scan views">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="test-card__copy">
+                        <h3>Brain MRI</h3>
+                        <p>A brain MRI takes detailed pictures of the brain. It helps your doctor look for structural changes that could help explain the seizure.</p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
               </div>
               <div class="micro-grid__item">
                 <strong>Timing</strong>
@@ -904,6 +1081,25 @@
     });
 
     sections.forEach((section) => observer.observe(section));
+
+    const testsPanel = document.querySelector("[data-tests-panel]");
+    const testsToggle = document.querySelector("[data-tests-toggle]");
+    const testsExplainer = document.getElementById("tests-explainer");
+
+    if (testsPanel && testsToggle && testsExplainer) {
+      const testsToggleIcon = testsToggle.querySelector(".micro-grid__toggle-icon");
+
+      testsToggle.addEventListener("click", () => {
+        const isOpen = testsToggle.getAttribute("aria-expanded") === "true";
+        testsToggle.setAttribute("aria-expanded", String(!isOpen));
+        testsPanel.classList.toggle("is-open", !isOpen);
+        testsExplainer.hidden = isOpen;
+
+        if (testsToggleIcon) {
+          testsToggleIcon.textContent = isOpen ? "+" : "−";
+        }
+      });
+    }
   </script>
 </body>
 </html>

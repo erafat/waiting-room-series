@@ -77,7 +77,7 @@ If a family member or friend witnessed the event, their description can be usefu
 Before, during, after
 
 **Body**
-The sequence matters. If there was a warning feeling before the event, what happened during it, and how you felt afterward can all help your doctor understand the episode.
+Before, during, and after details help explain the event.
 
 ## 07. Which Details Matter
 
@@ -131,6 +131,11 @@ The first visit often includes a careful history, a neurologic exam, and a discu
 
 **History Detail**
 A detailed narrative history of your seizure, including what you felt, what others observed, how long it lasted, and how you recovered.
+
+**Interactive Tests Detail**
+The Tests tile can expand on tap to show a visual explanation of two common next-step studies:
+- EEG: small scalp sensors record electrical activity in the brain and can help reveal seizure-like patterns
+- Brain MRI: detailed brain pictures can help show structural changes that may help explain the seizure
 
 **Note**
 Not every test happens the same day.
