@@ -8,6 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <script>
+    window.WAITING_ROOM_ANALYTICS = {
+      provider: "goatcounter",
+      siteCode: "waitingroom",
+      defaultCampaign: "epilepsy_first_visit_waiting_room"
+    };
+  </script>
   <style>
     :root {
       --paper: #f6efdf;
@@ -1065,6 +1072,59 @@
   </main>
 
   <script>
+    const analyticsConfig = window.WAITING_ROOM_ANALYTICS || {};
+    const searchParams = new URLSearchParams(window.location.search);
+
+    function normalizeDeliverySource(rawValue) {
+      if (!rawValue) return "";
+      const value = rawValue.trim().toLowerCase();
+
+      if (value === "qr" || value === "qrcode") return "qr";
+      if (value === "nfc" || value === "tap") return "nfc";
+
+      return value.replace(/[^a-z0-9_-]+/g, "-");
+    }
+
+    function loadGoatCounter() {
+      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
+      if (document.querySelector("script[data-goatcounter]")) return;
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://gc.zgo.at/count.js";
+      script.dataset.goatcounter = `https://${analyticsConfig.siteCode}.goatcounter.com/count`;
+      document.head.appendChild(script);
+    }
+
+    const deliverySource = normalizeDeliverySource(
+      searchParams.get("utm_source") ||
+      searchParams.get("source") ||
+      searchParams.get("via") ||
+      searchParams.get("channel")
+    );
+
+    // Normalize QR/NFC attribution into standard campaign params so the static site
+    // can be measured without a custom backend.
+    let normalizedTracking = false;
+
+    if (deliverySource && !searchParams.get("utm_source")) {
+      searchParams.set("utm_source", deliverySource);
+      normalizedTracking = true;
+    }
+
+    if (deliverySource && !searchParams.get("utm_campaign") && analyticsConfig.defaultCampaign) {
+      searchParams.set("utm_campaign", analyticsConfig.defaultCampaign);
+      normalizedTracking = true;
+    }
+
+    if (normalizedTracking) {
+      const nextUrl = new URL(window.location.href);
+      nextUrl.search = searchParams.toString();
+      window.history.replaceState({}, "", nextUrl);
+    }
+
+    loadGoatCounter();
+
     const sections = [...document.querySelectorAll("[data-screen]")];
     const counter = document.getElementById("counter");
 

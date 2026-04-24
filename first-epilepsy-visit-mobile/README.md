@@ -61,6 +61,24 @@ Short version:
 5. Test on an actual phone in the clinic context
 6. Only then generate the rest of the scene set
 
+## Access Tracking
+
+The mobile entrypoint now preserves query parameters during the redirect to `prototype/`, so QR- and NFC-tagged links keep their attribution when patients land on the guide.
+
+Default tracking path:
+- use GoatCounter for public GitHub Pages analytics
+- count page opens as pageviews
+- read approximate unique people from GoatCounter visitors/sessions
+- separate QR versus NFC traffic with tagged links, not separate builds
+
+Setup:
+1. Create a GoatCounter site for the public domain.
+2. Set `window.WAITING_ROOM_ANALYTICS.siteCode` in [prototype/index.html](./prototype/index.html). It is currently configured as `waitingroom`.
+3. Use tagged launch URLs for clinic materials:
+   - QR: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=qr`
+   - NFC: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=nfc`
+4. In GoatCounter, use pageviews for total opens and the campaigns/source view to compare QR vs NFC.
+
 ## Folder Map
 
 - [storyboard.md](./storyboard.md): mobile beat structure
