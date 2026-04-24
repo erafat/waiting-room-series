@@ -12,7 +12,8 @@
     window.WAITING_ROOM_ANALYTICS = {
       provider: "goatcounter",
       siteCode: "waitingroom",
-      defaultCampaign: "epilepsy_first_visit_waiting_room"
+      defaultCampaign: "epilepsy_first_visit_waiting_room",
+      taggedOnly: true
     };
   </script>
   <style>
@@ -1131,6 +1132,19 @@
       });
     }
 
+    function trackTaggedVisit(source) {
+      if (!source) return;
+      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
+
+      whenGoatCounterReady(() => {
+        window.goatcounter.count({
+          path: window.location.pathname + window.location.search,
+          title: document.title,
+          referrer: source.toUpperCase()
+        });
+      });
+    }
+
     const deliverySource = normalizeDeliverySource(
       searchParams.get("utm_source") ||
       searchParams.get("source") ||
@@ -1158,8 +1172,16 @@
       window.history.replaceState({}, "", nextUrl);
     }
 
+    if (analyticsConfig.taggedOnly) {
+      window.goatcounter = Object.assign({}, window.goatcounter, { no_onload: true });
+    }
+
     loadGoatCounter();
-    trackDeliverySourceEvent(deliverySource);
+
+    if (deliverySource) {
+      trackTaggedVisit(deliverySource);
+      trackDeliverySourceEvent(deliverySource);
+    }
 
     const sections = [...document.querySelectorAll("[data-screen]")];
     const counter = document.getElementById("counter");
