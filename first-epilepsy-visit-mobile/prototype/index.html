@@ -1145,6 +1145,29 @@
       });
     }
 
+    function getDwellBucket(seconds) {
+      if (seconds < 15) return "dwell-0-15s";
+      if (seconds < 60) return "dwell-15-60s";
+      if (seconds < 180) return "dwell-60-180s";
+      return "dwell-180s-plus";
+    }
+
+    function trackDwellTime(source, seconds) {
+      if (!source) return;
+      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
+
+      const dwellBucket = getDwellBucket(seconds);
+
+      whenGoatCounterReady(() => {
+        window.goatcounter.count({
+          path: `${dwellBucket}-${source}`,
+          title: `Visible time ${dwellBucket.replace("dwell-", "")} via ${source.toUpperCase()}`,
+          event: true,
+          referrer: source.toUpperCase()
+        });
+      });
+    }
+
     const deliverySource = normalizeDeliverySource(
       searchParams.get("utm_source") ||
       searchParams.get("source") ||
@@ -1182,6 +1205,43 @@
       trackTaggedVisit(deliverySource);
       trackDeliverySourceEvent(deliverySource);
     }
+
+    let visibleStartedAt = document.hidden ? 0 : Date.now();
+    let accumulatedVisibleMs = 0;
+    let dwellTracked = false;
+
+    function pauseVisibleTimer() {
+      if (!visibleStartedAt) return;
+      accumulatedVisibleMs += Date.now() - visibleStartedAt;
+      visibleStartedAt = 0;
+    }
+
+    function resumeVisibleTimer() {
+      if (!deliverySource) return;
+      if (document.hidden) return;
+      if (visibleStartedAt) return;
+      visibleStartedAt = Date.now();
+    }
+
+    function flushDwellTime() {
+      if (!deliverySource || dwellTracked) return;
+      pauseVisibleTimer();
+
+      const visibleSeconds = Math.max(0, Math.round(accumulatedVisibleMs / 1000));
+      trackDwellTime(deliverySource, visibleSeconds);
+      dwellTracked = true;
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        pauseVisibleTimer();
+      } else {
+        resumeVisibleTimer();
+      }
+    });
+
+    window.addEventListener("pagehide", flushDwellTime);
+    window.addEventListener("beforeunload", flushDwellTime);
 
     const sections = [...document.querySelectorAll("[data-screen]")];
     const counter = document.getElementById("counter");
