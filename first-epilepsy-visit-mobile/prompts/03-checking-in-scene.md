@@ -5,6 +5,10 @@ Primary request: Rebuild PDF `page_03` / "Checking In" for mobile as `page_03-1`
 Overall style:
 Simple patient-education comic style matching `epilepsy-first-visit.pdf`: warm beige paper, clear black hand-drawn outlines, flat restrained watercolor fills, minimal shading, low detail, readable comic text, expressive but simple faces, calm reassuring tone.
 
+Character lock:
+Marcus should read clearly as a young adult Black man in his early 20s, not as a teen or child. He wears the olive hoodie consistently across the sequence.
+The receptionist/front-desk staff member in page_03-01 must be a Black woman in her 50s-60s with a warm professional expression.
+
 Character eye style:
 Use only simple, slightly vertical black dots or short vertical ovals.
 Do not draw whites of the eyes, eye outlines, eyelid lines, irises, pupils inside whites, shiny highlights, glossy pupils, realistic eyes, or almond eye shapes.
@@ -13,7 +17,7 @@ Create three separate images:
 
 Panel page_03-1 - Checking In
 Aspect ratio: 6:5.
-Scene: warm neurology clinic front desk. Marcus stands at reception while his parents sit nearby. A friendly clinic staff member hands Marcus a clipboard/forms. Combine the original front-desk and forms panels into one clean composition.
+Scene: warm neurology clinic front desk. Marcus stands at reception while his parents sit nearby. A friendly Black female receptionist in her 50s-60s hands Marcus a clipboard/forms. Combine the original front-desk and forms panels into one clean composition.
 Heading:
 "Checking In"
 Caption:

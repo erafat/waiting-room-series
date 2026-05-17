@@ -23,8 +23,8 @@ Fit each speech bubble or caption box to the 6:5 panel width so line breaks are 
 Do not shrink the final caption text too much.
 
 Character lock:
-Dr. Rehim has light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat.
-Marcus is a young Black teen wearing an olive green hoodie.
+Dr. Rehim has light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat. Keep this likeness consistent with the 04 / Meet The Doctor panels.
+Marcus is a young adult Black man in his early 20s wearing an olive green hoodie, not a teen or child.
 Marcus's parents are supportive and concerned.
 
 Create two separate comic panels:

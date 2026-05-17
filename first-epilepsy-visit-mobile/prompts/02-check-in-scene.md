@@ -5,6 +5,10 @@ Primary request: Rebuild PDF `page_02` / "The Day Arrives" for mobile as `page_0
 Overall style:
 Simple patient-education comic style matching `epilepsy-first-visit.pdf`: warm beige paper, clear black hand-drawn outlines, flat restrained watercolor fills, minimal shading, low detail, readable comic text, expressive but simple faces, calm reassuring tone.
 
+Character lock:
+Marcus should read clearly as a young adult Black man in his early 20s, not as a teen or child. He has a short fade, olive green hoodie, dark jeans, and a cautious but mature expression.
+His parents are supportive adults beside him.
+
 Character eye style:
 Use only simple, slightly vertical black dots or short vertical ovals.
 Do not draw whites of the eyes, eye outlines, eyelid lines, irises, pupils inside whites, shiny highlights, glossy pupils, realistic eyes, or almond eye shapes.
@@ -23,14 +27,14 @@ Suggested filename: page_02-01-arrival.png
 Panel page_02-2 - Marcus Worries
 Aspect ratio: 6:5.
 Scene: close-up of Marcus looking worried near the clinic entrance or waiting room, one hand near his face. He wears an olive green hoodie. Keep the background simple.
-Thought bubble:
-"I don't even know what an epileptologist does... What are they going to do to me?"
+Marcus speech or thought bubble, exact text:
+"I don't even know what a seizure doctor does..."
 Suggested filename: page_02-02-marcus-worry.png
 
 Panel page_02-3 - Family Support
 Aspect ratio: 6:5.
 Scene: Marcus stands between his mother and father. His mother places a supportive hand on his shoulder. His father stands calmly nearby. Marcus looks nervous but comforted.
-Mother speech:
+Background text box only, with no speech-balloon tail and no pointer:
 "We're right here with you, honey."
 Suggested filename: page_02-03-family-support.png
 
