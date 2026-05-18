@@ -28,7 +28,7 @@ Panel page_02-2 - Marcus Worries
 Aspect ratio: 6:5.
 Scene: close-up of Marcus looking worried near the clinic entrance or waiting room, one hand near his face. He wears an olive green hoodie. Keep the background simple.
 Marcus speech or thought bubble, exact text:
-"I don't even know what a seizure doctor does..."
+"I don't even know what an epileptologist does..."
 Suggested filename: page_02-02-marcus-worry.png
 
 Panel page_02-3 - Family Support
@@ -41,7 +41,7 @@ Suggested filename: page_02-03-family-support.png
 Panel page_02-4 - Walk Through It Together
 Aspect ratio: 6:5.
 Scene: Marcus seen mostly from behind or three-quarter back, opening a glass door into a calm waiting room with warm chairs, a plant, and soft light. Focus on the doorway and transition into the appointment.
-Narration bubble:
+Caption box only, with no speech-balloon tail and no pointer:
 "But here's the thing — this appointment is designed to HELP you. Let's walk through it together."
 Suggested filename: page_02-04-walk-through.png
 
