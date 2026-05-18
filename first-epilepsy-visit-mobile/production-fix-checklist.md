@@ -8,13 +8,17 @@ Review target: ready-for-review version by 2026-05-18
 
 Regenerate or manually revise these visible panels before the next review:
 
+- `assets/generated/01-hero-cover.png`
+  - Required wardrobe change: Marcus should no longer wear the green hoodie. Regenerate the cover with Marcus as a late-20s adult patient in a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers.
+  - Keep Dr. Rehim consistent with the simplified physician design and avoid white coat / generic doctor styling.
+
 - `assets/generated/page_02-03-family-support.png`
   - Visual QA 2026-05-17: Marcus now reads closer to adult, but the support line still has a speech-balloon tail.
   - Required fix: keep the support line, but render it as background text or a caption box with no speech-tail pointer.
 
 - `assets/generated/page_08-04-journey-starts.png`
   - Dr. Rehim must match the earlier Dr. Rehim design from the 04 / Meet The Doctor panels.
-  - Marcus should read as a young adult in his late 20s.
+  - Marcus should read as a late-20s adult patient and should no longer wear the green hoodie; use the muted teal-blue overshirt / lightweight chore jacket wardrobe.
 
 ## Completed Structure Edits
 
@@ -33,6 +37,7 @@ Regenerate or manually revise these visible panels before the next review:
 Before declaring the branch ready:
 
 - Marcus reads consistently as a late-20s Black man across the cover, day-arrives panels, check-in, doctor visit, story panels, and closing panels.
+- Marcus uses the adult-casual wardrobe consistently where visible: muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, clean white sneakers; no green hoodie or sweatshirt.
 - Dr. Rehim has the same hair, glasses, facial structure, and blazer style in the final panel as in `04a-doctor-door.png`.
 - No generated panel includes accidental page labels, prompt labels, unreadable paperwork text, or inconsistent clinic branding.
 
