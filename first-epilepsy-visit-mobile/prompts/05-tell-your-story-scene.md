@@ -24,7 +24,7 @@ Do not shrink the final caption text too much.
 
 Character lock:
 Dr. Rehim has light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat. Keep this likeness consistent with the 04 / Meet The Doctor panels.
-Marcus is a young adult Black man in his late 20s wearing an olive green hoodie, not a teen or child.
+Marcus is a young adult Black man in his late 20s wearing a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers. Do not put him in a hoodie or sweatshirt; he should not read as a teen or child.
 Marcus's parents are supportive and concerned.
 
 Create two separate comic panels:

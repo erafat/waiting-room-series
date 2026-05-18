@@ -23,7 +23,7 @@ Fit the speech bubble to the 6:5 panel width so line breaks are balanced.
 
 Character lock:
 Dr. Rehim should match the current physician design: light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat.
-Marcus should be a young adult Black man in his late 20s wearing an olive green hoodie, not a teen or child.
+Marcus should be a young adult Black man in his late 20s wearing a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers. Do not put him in a hoodie or sweatshirt; he should not read as a teen or child.
 Marcus's parents should be nearby and supportive.
 
 Create one separate comic panel for mobile scrolling:

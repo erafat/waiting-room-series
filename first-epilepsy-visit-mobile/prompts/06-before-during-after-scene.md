@@ -24,7 +24,7 @@ The cloud border should be clear, black, and readable on a phone.
 Do not use speech bubbles or thought bubbles for the explanatory sentence. Put the sentence directly on the pale sky-blue memory background in large black comic lettering.
 
 Character lock:
-Marcus is a young adult Black man in his late 20s wearing an olive green hoodie, not a teen or child.
+Marcus is a young adult Black man in his late 20s wearing a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers. Do not put him in a hoodie or sweatshirt; he should not read as a teen or child.
 Marcus's mother has curly hair and a burgundy cardigan.
 Marcus's father has gray hair and a light shirt.
 

@@ -6,7 +6,7 @@ Overall style:
 Simple patient-education comic style matching `epilepsy-first-visit.pdf`: warm beige paper, clear black hand-drawn outlines, flat restrained watercolor fills, minimal shading, low detail, readable comic text, expressive but simple faces, calm reassuring tone.
 
 Character lock:
-Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child. He has a short fade, olive green hoodie, dark jeans, and a cautious but mature expression.
+Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child. He has a short fade, muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, clean white sneakers, and a cautious but mature expression. Do not put him in a hoodie or sweatshirt.
 His parents are supportive adults beside him.
 
 Character eye style:
@@ -26,7 +26,7 @@ Suggested filename: page_02-01-arrival.png
 
 Panel page_02-2 - Marcus Worries
 Aspect ratio: 6:5.
-Scene: close-up of Marcus looking worried near the clinic entrance or waiting room, one hand near his face. He wears an olive green hoodie. Keep the background simple.
+Scene: close-up of Marcus looking worried near the clinic entrance or waiting room, one hand near his face. He wears the muted teal-blue overshirt or lightweight chore jacket over a cream T-shirt. Keep the background simple.
 Marcus speech or thought bubble, exact text:
 "I don't even know what an epileptologist does..."
 Suggested filename: page_02-02-marcus-worry.png

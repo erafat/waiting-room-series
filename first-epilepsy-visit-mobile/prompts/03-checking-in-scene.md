@@ -6,7 +6,7 @@ Overall style:
 Simple patient-education comic style matching `epilepsy-first-visit.pdf`: warm beige paper, clear black hand-drawn outlines, flat restrained watercolor fills, minimal shading, low detail, readable comic text, expressive but simple faces, calm reassuring tone.
 
 Character lock:
-Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child. He wears the olive hoodie consistently across the sequence.
+Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child. He wears a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers. Do not put him in a hoodie or sweatshirt.
 
 Character eye style:
 Use only simple, slightly vertical black dots or short vertical ovals.

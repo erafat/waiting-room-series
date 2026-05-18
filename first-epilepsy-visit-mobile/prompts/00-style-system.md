@@ -23,7 +23,7 @@ The best-fit reference direction is the `images-2-indie-comic` branch from the l
 
 ## What To Keep From The Existing Comic
 
-- Marcus as a young adult in his late 20s, wearing an olive hoodie
+- Marcus as a young adult in his late 20s, wearing adult casual clothing: a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers
 - supportive mother in burgundy
 - father in gray polo
 - Dr. Rehim as the updated simplified likeness from `physician-reference.md` and `../assets/characters/dr-rehim-character-sheet-simplified-v2.png`: light olive skin, dark side-swept hair with soft volume, clear translucent glasses, strong brows, smooth face, soft smile lines, and a gray or brown blazer over a dark shirt
@@ -49,7 +49,7 @@ The best-fit reference direction is the `images-2-indie-comic` branch from the l
 
 ## Character Lock
 
-- Marcus: late-20s Black man, short fade, olive green hoodie, dark jeans, white sneakers
+- Marcus: late-20s Black man, short fade, muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, clean white sneakers; no hoodie or sweatshirt
 - Mrs. Johnson: Black woman, shoulder-length natural curls, burgundy cardigan, cream blouse
 - Mr. Johnson: Black man, gray polo, khaki pants, broadest silhouette
 - Dr. Rehim: match the active simplified physician character sheet in `../assets/characters/dr-rehim-character-sheet-simplified-v2.png`; light olive skin, dark brown to black side-swept hair with soft volume, clear translucent rectangular-round glasses, strong dark eyebrows, oval face, softly defined jaw, smooth simplified face, clean-shaven or only the faintest stubble, calm listening smile; wardrobe is a brown or gray blazer over a dark knit or shirt with tailored dark trousers; no white coat
@@ -78,7 +78,7 @@ Use this at the start of each Image 2.0 prompt:
 - no harsh hospital drama
 - no cluttered background
 - no medical horror cues
-- do not make Marcus look like a child or teenager; he should read as a young adult in his 20s
+- do not make Marcus look like a child, teenager, college student, or hoodie-wearing adolescent; he should read as a late-20s adult patient
 - do not turn Dr. Rehim into a generic hospital doctor; keep his glasses light and translucent, and avoid ID badge text or white-coat styling
 - keep Dr. Rehim simpler and smoother than a portrait reference; avoid pores, heavy stubble, fine wrinkles, and dense facial hatching
 

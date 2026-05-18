@@ -11,7 +11,7 @@ Do not draw whites of the eyes, eye outlines, eyelid lines, irises, pupils insid
 For Dr. Rehim, draw the glasses frame only; the eyes inside the glasses must remain plain vertical black dots.
 
 Character lock:
-Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child.
+Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child. He wears adult casual clothing: a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers. Do not put him in a hoodie or sweatshirt.
 Dr. Rehim must match the 04 / Meet The Doctor panels and the active physician reference: light olive skin, dark side-swept hair with soft volume, clear translucent rectangular-round glasses, strong brows, smooth simplified face, calm smile, gray or brown blazer over a dark shirt, no white coat. Do not change his facial structure, age, hair, glasses, or clothing in the final panel.
 
 Create four separate images:
@@ -45,7 +45,7 @@ Suggested filename: page_08-03-leaving-clinic.png
 
 Panel page_08-4 - Journey Starts
 Aspect ratio: 6:5.
-Scene: final reassuring group portrait. Marcus, his mother, his father, and Dr. Rehim stand together in a calm clinic/warm neutral background. Waist-up or chest-up, friendly simple expressions. Dr. Rehim must look like the same doctor from page_04 and earlier page_08 panels, not a new or generic physician.
+Scene: final reassuring group portrait. Marcus, his mother, his father, and Dr. Rehim stand together in a calm clinic/warm neutral background. Waist-up or chest-up, friendly simple expressions. Marcus must clearly read as a late-20s adult patient in the muted teal-blue overshirt/lightweight jacket and cream T-shirt, not as a teen in a hoodie. Dr. Rehim must look like the same doctor from page_04 and earlier page_08 panels, not a new or generic physician.
 Headline:
 "Your epilepsy journey starts here — and you don't walk it alone."
 Subline:
