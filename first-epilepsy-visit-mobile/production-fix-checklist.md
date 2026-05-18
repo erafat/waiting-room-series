@@ -6,19 +6,15 @@ Review target: ready-for-review version by 2026-05-18
 
 ## Required Art Replacements
 
-Regenerate or manually revise these visible panels before the next review:
+Status as of 2026-05-18: visible Marcus wardrobe replacements are complete in the public preview assets.
 
 - `assets/generated/01-hero-cover.png`
-  - Required wardrobe change: Marcus should no longer wear the green hoodie. Regenerate the cover with Marcus as a late-20s adult patient in a muted teal-blue overshirt or lightweight chore jacket over a cream crew-neck T-shirt, dark straight-leg jeans or chinos, and clean white sneakers.
+  - Complete: Marcus no longer wears the green hoodie. The cover now shows Marcus as a late-20s adult patient in a muted teal-blue overshirt / lightweight jacket over a cream crew-neck T-shirt.
   - Keep Dr. Rehim consistent with the simplified physician design and avoid white coat / generic doctor styling.
 
-- `assets/generated/page_02-03-family-support.png`
-  - Visual QA 2026-05-17: Marcus now reads closer to adult, but the support line still has a speech-balloon tail.
-  - Required fix: keep the support line, but render it as background text or a caption box with no speech-tail pointer.
-
 - `assets/generated/page_08-04-journey-starts.png`
-  - Dr. Rehim must match the earlier Dr. Rehim design from the 04 / Meet The Doctor panels.
-  - Marcus should read as a late-20s adult patient and should no longer wear the green hoodie; use the muted teal-blue overshirt / lightweight chore jacket wardrobe.
+  - Complete: Marcus no longer wears the green hoodie and reads as a late-20s adult patient in the muted teal-blue overshirt / lightweight jacket wardrobe.
+  - Dr. Rehim is closer to the earlier Dr. Rehim design from the 04 / Meet The Doctor panels.
 
 ## Completed Structure Edits
 
@@ -27,6 +23,7 @@ Regenerate or manually revise these visible panels before the next review:
   - Text now reads: `I don't even know what an epileptologist does...`
 - The visible prototype now removes the old `page_03-01-checking-in.png` front-desk image and keeps only `page_03-02-timeline-tip.png` for Checking In.
 - The visible prototype now removes the old second Meet The Doctor image and keeps only `04a-doctor-door.png`.
+- Visible Marcus wardrobe sweep completed across the cover, day-arrives panels, check-in, doctor visit, story panels, explanation panels, before-you-leave panels, and closing panel.
 - Unused generated assets removed from the public folder:
   - `assets/generated/page_03-01-checking-in.png`
   - `assets/generated/04b-marcus-reaction.png`
@@ -44,7 +41,7 @@ Before declaring the branch ready:
 ## Text QA Gate
 
 - Panel `01 / The Day Arrives`, second image: `I don't even know what an epileptologist does...`
-- Panel `01 / The Day Arrives`, third image: support text has no speech tail. Still pending as of 2026-05-17 visual QA.
+- Panel `01 / The Day Arrives`, fourth image: `But here's the thing` appears as a rectangular caption box without a speech-tail pointer.
 - Patient-facing clinical language remains plain and reassuring.
 
 ## Deploy Gate
