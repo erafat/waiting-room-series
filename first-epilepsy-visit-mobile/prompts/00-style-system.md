@@ -23,7 +23,7 @@ The best-fit reference direction is the `images-2-indie-comic` branch from the l
 
 ## What To Keep From The Existing Comic
 
-- Marcus as a young adult in his early 20s, wearing an olive hoodie
+- Marcus as a young adult in his late 20s, wearing an olive hoodie
 - supportive mother in burgundy
 - father in gray polo
 - Dr. Rehim as the updated simplified likeness from `physician-reference.md` and `../assets/characters/dr-rehim-character-sheet-simplified-v2.png`: light olive skin, dark side-swept hair with soft volume, clear translucent glasses, strong brows, smooth face, soft smile lines, and a gray or brown blazer over a dark shirt
@@ -49,7 +49,7 @@ The best-fit reference direction is the `images-2-indie-comic` branch from the l
 
 ## Character Lock
 
-- Marcus: early-20s Black man, short fade, olive green hoodie, dark jeans, white sneakers
+- Marcus: late-20s Black man, short fade, olive green hoodie, dark jeans, white sneakers
 - Mrs. Johnson: Black woman, shoulder-length natural curls, burgundy cardigan, cream blouse
 - Mr. Johnson: Black man, gray polo, khaki pants, broadest silhouette
 - Dr. Rehim: match the active simplified physician character sheet in `../assets/characters/dr-rehim-character-sheet-simplified-v2.png`; light olive skin, dark brown to black side-swept hair with soft volume, clear translucent rectangular-round glasses, strong dark eyebrows, oval face, softly defined jaw, smooth simplified face, clean-shaven or only the faintest stubble, calm listening smile; wardrobe is a brown or gray blazer over a dark knit or shirt with tailored dark trousers; no white coat

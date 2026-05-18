@@ -11,7 +11,7 @@ Do not draw whites of the eyes, eye outlines, eyelid lines, irises, pupils insid
 For Dr. Rehim, draw the glasses frame only; the eyes inside the glasses must remain plain vertical black dots.
 
 Character lock:
-Marcus should read clearly as a young adult Black man in his early 20s, not as a teen or child.
+Marcus should read clearly as a young adult Black man in his late 20s, not as a teen or child.
 Dr. Rehim must match the 04 / Meet The Doctor panels and the active physician reference: light olive skin, dark side-swept hair with soft volume, clear translucent rectangular-round glasses, strong brows, smooth simplified face, calm smile, gray or brown blazer over a dark shirt, no white coat. Do not change his facial structure, age, hair, glasses, or clothing in the final panel.
 
 Create four separate images:

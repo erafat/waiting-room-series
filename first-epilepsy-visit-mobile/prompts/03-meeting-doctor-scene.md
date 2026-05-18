@@ -25,7 +25,7 @@ Do not shrink 04C text noticeably smaller than 04A or 04B.
 
 Character lock:
 Dr. Rehim should match the current physician design: light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat.
-Marcus should be a young adult Black man in his early 20s wearing an olive green hoodie, not a teen or child.
+Marcus should be a young adult Black man in his late 20s wearing an olive green hoodie, not a teen or child.
 Marcus's parents should be nearby and supportive.
 
 Create three separate comic panels for mobile scrolling:
