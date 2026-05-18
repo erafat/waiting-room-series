@@ -1,6 +1,6 @@
 Use case: mobile vertical comic sequence
-Asset type: three separate phone-scroll comic panels
-Primary request: Rebuild the "04 / Meet The Doctor" section as a more comic-like mobile sequence using the style of `epilepsy-first-visit.pdf` and `pannel review_meet the doctor.png`.
+Asset type: one phone-scroll comic panel
+Primary request: Keep only the doorway greeting panel for the "04 / Meet The Doctor" section, using the style of `epilepsy-first-visit.pdf` and `pannel review_meet the doctor.png`.
 
 Keep the section topic:
 04 / Meet The Doctor
@@ -19,16 +19,14 @@ If glasses are present, draw the glasses frame only; the eyes inside the glasses
 Faces should stay simple, flat, and cartoon-like.
 
 Text scale:
-Keep the in-image comic text at a consistent visual size across 04A, 04B, and 04C.
-Fit each speech or thought bubble to the square panel width so line breaks are balanced.
-Do not shrink 04C text noticeably smaller than 04A or 04B.
+Fit the speech bubble to the 6:5 panel width so line breaks are balanced.
 
 Character lock:
 Dr. Rehim should match the current physician design: light olive skin, dark side-swept hair, clear rectangular-round glasses, calm smile, gray or brown blazer over a dark shirt, no white coat.
 Marcus should be a young adult Black man in his late 20s wearing an olive green hoodie, not a teen or child.
 Marcus's parents should be nearby and supportive.
 
-Create three separate comic panels for mobile scrolling:
+Create one separate comic panel for mobile scrolling:
 
 Panel 04A - Door Greeting
 Aspect ratio: 6:5 mobile panel, meaning width:height = 6:5.
@@ -37,32 +35,15 @@ Speech bubble from Dr. Rehim:
 "Marcus? Hi - I'm Dr. Rehim. Come on in!"
 Do not include a panel number label. Do not write "04A" anywhere in the image.
 
-Panel 04B - Marcus Reaction
-Aspect ratio: 6:5 mobile panel, meaning width:height = 6:5.
-Scene: Close-up portrait of Marcus in his olive hoodie, looking relieved and a little surprised.
-Thought bubble from Marcus:
-"He's not even wearing a lab coat... he seems pretty normal."
-Do not include a panel number label. Do not write "04B" anywhere in the image.
-
-Panel 04C - Seated Explanation
-Aspect ratio: 6:5 mobile panel, meaning width:height = 6:5.
-Scene: Dr. Rehim sits with Marcus and his parents in a comfortable consultation room. Everyone is at eye level. The mood feels like a conversation, not an exam.
-Speech bubble from Dr. Rehim:
-"An epileptologist specializes in seizures and helps find the best plan for you."
-Do not include a panel number label. Do not write "04C" anywhere in the image.
-
 Important layout instructions:
 Do not create one large full-page illustration.
 Do not create one vertical strip unless specifically requested.
 Do not create a text-heavy educational card.
 Do not put long paragraphs outside the image.
-Create three separate images, one panel per file.
+Create one image, one panel per file.
 Use 6:5 proportions by default, unless a later prompt specifically asks for another ratio.
 Speech bubbles must be large, simple, high contrast, and readable.
-Keep the comic text size visually consistent across all three panels.
 Use the PDF comic as the style reference, but make the panel proportions better for mobile.
 
 Suggested output filenames:
 04a-doctor-door.png
-04b-marcus-reaction.png
-04c-doctor-explains.png
