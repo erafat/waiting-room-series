@@ -1,0 +1,24 @@
+{
+  "name": "waiting-room-series",
+  "version": "1.0.0",
+  "description": "Patient-friendly waiting-room education materials designed for mobile review and sharing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erafat/waiting-room-series.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/erafat/waiting-room-series/issues"
+  },
+  "homepage": "https://github.com/erafat/waiting-room-series#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}
