@@ -63,24 +63,22 @@ Short version:
 
 ## Access Tracking
 
-The mobile entrypoint now preserves query parameters during the redirect to `prototype/`, so QR- and NFC-tagged links keep their attribution when patients land on the guide.
+The mobile entrypoint now preserves query parameters during the redirect to `prototype/`, so QR-tagged links keep their attribution when patients land on the guide.
 
 Default tracking path:
 - use GoatCounter for public GitHub Pages analytics
-- count only tagged QR/NFC entries as pageviews
+- count only tagged QR entries as pageviews for the trial run
 - read approximate unique people from GoatCounter visitors/sessions
-- separate QR versus NFC traffic with tagged links, not separate builds
-- also emit GoatCounter events `entry-qr` and `entry-nfc` on page load so channel tests stay visible even when GoatCounter collapses repeat visits in one session
-- emit one dwell-time event on exit using visible time only: `dwell-0-15s-*`, `dwell-15-60s-*`, `dwell-60-180s-*`, or `dwell-180s-plus-*`
-- ignore untagged/direct refreshes so same-site URL visits do not pollute the dashboard
+- use the normal page row as the trial-open count
+- do not emit separate entry or dwell-time events during the QR-only trial, so one scan maps to one counted pageview
+- ignore untagged/direct refreshes and non-QR sources so same-site URL visits do not pollute the dashboard
 
 Setup:
 1. Create a GoatCounter site for the public domain.
 2. Set `window.WAITING_ROOM_ANALYTICS.siteCode` in [prototype/index.html](./prototype/index.html). It is currently configured as `waitingroom`.
-3. Use tagged launch URLs for clinic materials:
+3. Use the tagged launch URL for clinic materials:
    - QR: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=qr`
-   - NFC: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=nfc`
-4. In GoatCounter, use pageviews for total tagged opens, the referrer/source view for `QR` vs `NFC`, and the Events view for `entry-qr` / `entry-nfc` plus dwell buckets such as `dwell-15-60s-qr`.
+4. In GoatCounter, use the normal pageview row for total QR-tagged opens.
 
 ## Folder Map
 

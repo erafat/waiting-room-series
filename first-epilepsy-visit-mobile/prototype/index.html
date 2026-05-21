@@ -13,6 +13,7 @@
       provider: "goatcounter",
       siteCode: "waitingroom",
       defaultCampaign: "epilepsy_first_visit_waiting_room",
+      allowedSources: ["qr"],
       taggedOnly: true
     };
   </script>
@@ -1093,7 +1094,6 @@
       if (!rawValue) return "";
       const value = rawValue.trim().toLowerCase();
       if (value === "qr" || value === "qrcode") return "qr";
-      if (value === "nfc" || value === "tap") return "nfc";
       return value.replace(/[^a-z0-9_-]+/g, "-");
     }
 
@@ -1121,14 +1121,6 @@
       }, 250);
     }
 
-    function trackDeliverySourceEvent(source) {
-      if (!source) return;
-      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
-      whenGoatCounterReady(() => {
-        window.goatcounter.count({ path: `entry-${source}`, title: `Entry via ${source.toUpperCase()}`, event: true });
-      });
-    }
-
     function trackTaggedVisit(source) {
       if (!source) return;
       if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
@@ -1137,32 +1129,18 @@
       });
     }
 
-    function getDwellBucket(seconds) {
-      if (seconds < 15) return "dwell-0-15s";
-      if (seconds < 60) return "dwell-15-60s";
-      if (seconds < 180) return "dwell-60-180s";
-      return "dwell-180s-plus";
-    }
-
-    function trackDwellTime(source, seconds) {
-      if (!source) return;
-      if (analyticsConfig.provider !== "goatcounter" || !analyticsConfig.siteCode) return;
-      const dwellBucket = getDwellBucket(seconds);
-      whenGoatCounterReady(() => {
-        window.goatcounter.count({ path: `${dwellBucket}-${source}`, title: `Visible time ${dwellBucket.replace("dwell-", "")} via ${source.toUpperCase()}`, event: true, referrer: source.toUpperCase() });
-      });
-    }
-
     const deliverySource = normalizeDeliverySource(
       searchParams.get("utm_source") || searchParams.get("source") ||
       searchParams.get("via") || searchParams.get("channel")
     );
+    const allowedSources = analyticsConfig.allowedSources || [];
+    const shouldTrackVisit = deliverySource && (!allowedSources.length || allowedSources.includes(deliverySource));
 
     let normalizedTracking = false;
-    if (deliverySource && !searchParams.get("utm_source")) {
+    if (shouldTrackVisit && !searchParams.get("utm_source")) {
       searchParams.set("utm_source", deliverySource); normalizedTracking = true;
     }
-    if (deliverySource && !searchParams.get("utm_campaign") && analyticsConfig.defaultCampaign) {
+    if (shouldTrackVisit && !searchParams.get("utm_campaign") && analyticsConfig.defaultCampaign) {
       searchParams.set("utm_campaign", analyticsConfig.defaultCampaign); normalizedTracking = true;
     }
     if (normalizedTracking) {
@@ -1175,33 +1153,7 @@
       window.goatcounter = Object.assign({}, window.goatcounter, { no_onload: true });
     }
     loadGoatCounter();
-    if (deliverySource) { trackTaggedVisit(deliverySource); trackDeliverySourceEvent(deliverySource); }
-
-    let visibleStartedAt = document.hidden ? 0 : Date.now();
-    let accumulatedVisibleMs = 0;
-    let dwellTracked = false;
-
-    function pauseVisibleTimer() {
-      if (!visibleStartedAt) return;
-      accumulatedVisibleMs += Date.now() - visibleStartedAt;
-      visibleStartedAt = 0;
-    }
-    function resumeVisibleTimer() {
-      if (!deliverySource || document.hidden || visibleStartedAt) return;
-      visibleStartedAt = Date.now();
-    }
-    function flushDwellTime() {
-      if (!deliverySource || dwellTracked) return;
-      pauseVisibleTimer();
-      trackDwellTime(deliverySource, Math.max(0, Math.round(accumulatedVisibleMs / 1000)));
-      dwellTracked = true;
-    }
-
-    document.addEventListener("visibilitychange", () => {
-      document.hidden ? pauseVisibleTimer() : resumeVisibleTimer();
-    });
-    window.addEventListener("pagehide", flushDwellTime);
-    window.addEventListener("beforeunload", flushDwellTime);
+    if (shouldTrackVisit) { trackTaggedVisit(deliverySource); }
 
     const sections = [...document.querySelectorAll("[data-screen]")];
     const counter = document.getElementById("counter");
