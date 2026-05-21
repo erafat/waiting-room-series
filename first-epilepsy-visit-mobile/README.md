@@ -68,9 +68,9 @@ The mobile entrypoint now preserves query parameters during the redirect to `pro
 Default tracking path:
 - use GoatCounter for public GitHub Pages analytics
 - count only tagged QR entries as pageviews for the trial run
-- read approximate unique people from GoatCounter visitors/sessions
-- use the normal page row as the trial-open count
-- do not emit separate entry or dwell-time events during the QR-only trial, so one scan maps to one counted pageview
+- read approximate unique people from the normal QR-tagged page row
+- use dwell-time event rows to estimate visible reading time
+- do not emit a separate `entry-qr` event during the QR-only trial, so the page row remains the usage count
 - ignore untagged/direct refreshes and non-QR sources so same-site URL visits do not pollute the dashboard
 
 Setup:
@@ -78,7 +78,7 @@ Setup:
 2. Set `window.WAITING_ROOM_ANALYTICS.siteCode` in [prototype/index.html](./prototype/index.html). It is currently configured as `waitingroom`.
 3. Use the tagged launch URL for clinic materials:
    - QR: `https://erafat.github.io/waiting-room-series/first-epilepsy-visit-mobile/?utm_campaign=epilepsy_first_visit_waiting_room&utm_source=qr`
-4. In GoatCounter, use the normal pageview row for total QR-tagged opens.
+4. In GoatCounter, use the normal pageview row for total QR-tagged opens, and use `dwell-*` event rows only for visible-time estimates. Do not use the combined total as the patient count.
 
 ## Folder Map
 
