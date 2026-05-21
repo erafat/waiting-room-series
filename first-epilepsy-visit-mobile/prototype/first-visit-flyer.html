@@ -58,46 +58,44 @@
       z-index: 1;
       min-height: 10.08in;
       display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 0.26in;
-    }
-
-    .brand-row {
-      min-height: 0.65in;
+      grid-template-rows: 1fr;
     }
 
     .main {
       display: grid;
       grid-template-columns: 1fr 3.38in;
+      grid-template-rows: auto 1fr;
       gap: 0.22in;
-      align-items: end;
-      align-self: end;
+      align-items: start;
+      align-self: stretch;
     }
 
     .copy-card {
-      align-self: end;
-      padding: 0.22in 0.28in;
+      grid-column: 1 / -1;
+      align-self: start;
+      padding: 0.24in 0.34in;
       border-radius: 16px;
       background: var(--paper);
       box-shadow: 0 16px 36px rgba(52, 37, 24, 0.11);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(2.1in, 0.75fr);
+      column-gap: 0.26in;
+      align-items: end;
       min-height: 0;
       backdrop-filter: blur(2px);
     }
 
     h1 {
       margin: 0;
-      max-width: 13ch;
+      max-width: 100%;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 31pt;
+      font-size: 35pt;
       line-height: 0.95;
       letter-spacing: 0;
     }
 
     .dek {
-      margin: 0.14in 0 0;
+      margin: 0;
       max-width: 34ch;
       font-size: 13.4pt;
       line-height: 1.16;
@@ -106,8 +104,9 @@
     }
 
     .optional {
-      margin-top: 0.14in;
-      padding-top: 0.12in;
+      grid-column: 1 / -1;
+      margin: 0.13in 0 0;
+      padding-top: 0.1in;
       border-top: 2px solid rgba(34, 27, 24, 0.12);
       font-size: 17pt;
       line-height: 1.2;
@@ -116,6 +115,8 @@
     }
 
     .qr-card {
+      grid-column: 2;
+      grid-row: 2;
       align-self: end;
       width: 100%;
       padding: 0.18in;
@@ -179,9 +180,6 @@
 <body>
   <main class="sheet">
     <div class="content">
-      <header class="brand-row">
-      </header>
-
       <section class="main" aria-label="Patient guide flyer">
         <div class="copy-card">
           <h1>Are you seeing Dr. Erafat Rehim today?</h1>
